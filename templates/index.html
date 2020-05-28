@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VK API Web-App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+</head>
+
+<body>
+    <div>
+        <h1> </h1>
+       
+    </div>
+
+    <div class="container">
+        <h1>VK API</h1>
+        <div class="table-1">
+            <table>
+                <tbody>
+                    {% if not results %}
+                        No Results.
+                    {% else %}
+                        <tr>
+                            <th> column </th>
+                            <th> column </th>
+                            <th> column </th>
+                        </tr>
+                    {% endif %}
+
+                    {% for result in results %}
+                        <tr>
+                            <td data-th="Block">{{result.}}</td>
+                            <td data-th="Element">{{result.}}</td>
+                            <td data-th="Modifier">{{result.}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
